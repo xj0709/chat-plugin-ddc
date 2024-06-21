@@ -2,22 +2,29 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "https://chat-plugin-build.vercel.app/api/startbuild",
-      "name": "startBuild",
+      "url": "https://chat-plugin-lbzi1xqex-xj0709s-projects.vercel.app/api/ddc-analysis",
+      "name": "extractDDC",
       "description": "start a build based on user's input: gttscope and baseline",
       "parameters": {
         "properties": {
-          "baseline": {
-            "description": "the baseline of this build, ask user to provide this information",
+          "dirpath": {
+            "description": "the directory path of the DDC logs, ask user to provide this information",
             "type": "string"
           },
-          "gttscope": {
+          "starttime": {
             "type": "string",
-            "enum": ["normal", "fivegonly"],
-            "description": "the gttscope, ask user to provide this information"
+            "description": "start time, the DDC logs collected after this time"
+          },
+          "endtime": {
+            "type": "string",
+            "description": "end time, the DDC logs collected after this time"
+          },
+          "time": {
+            "type": "string",
+            "description": "the DDC log which includes the specified time"
           }
         },
-        "required": ["baseline", "gttscope"],
+        "required": ["dirpath"],
         "type": "object"
       }
     }
@@ -25,15 +32,15 @@
   "author": "AIAgentPoC",
   "createdAt": "2024-06-18",
   "homepage": "https://github.com/lobehub/chat-plugin-template",
-  "identifier": "plugin-start-build-dev",
+  "identifier": "plugin-start-ddc-dev",
   "meta": {
     "avatar": "🚀",
     "tags": ["test"],
-    "title": "BuildAssistant",
-    "description": "This is the BuildAssistant to help you start a build"
+    "title": "DDCAssistant",
+    "description": "This is an DDC Assistant to help with DDC logs extracting and analysis"
   },
   "ui": {
-    "url": "https://chat-plugin-build.vercel.app",
+    "url": "https://chat-plugin-lbzi1xqex-xj0709s-projects.vercel.apps",
     "height": 200
   },
   "version": "1"

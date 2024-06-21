@@ -1,7 +1,7 @@
 
 import { PluginErrorType, createErrorResponse } from '@lobehub/chat-plugin-sdk';
 
-import { buildResult} from '@/data-dev';
+import { extractResult} from '@/data-dev';
 import { RequestData, ResponseData } from '@/type-dev';
 
 export const config = {
@@ -11,13 +11,13 @@ export const config = {
 export default async (req: Request) => {
   if (req.method !== 'POST') return createErrorResponse(PluginErrorType.MethodNotAllowed);
 
-  const { baseline, gttscope } = (await req.json()) as RequestData;
+  const { dirpath, endtime, starttime, time } = (await req.json()) as RequestData;
 
-  const bresult = gttscope === 'normal' ? 'ok' : 'fail';
+  const ddcresult = dirpath !== 'no' ? 'ok' : 'fail';
 
   const buildresult: ResponseData = {
-    baseline: baseline,
-    result: gttscope ? buildResult[bresult] : Object.values(buildResult).flat(),
+    dirpath: `${starttime}_${endtime}_or_${time}`,
+    result: extractResult[ddcresult],
     today: Date.now(),
   };
 

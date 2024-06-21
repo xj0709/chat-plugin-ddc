@@ -1,14 +1,14 @@
-export const buildResult = {
+export const extractResult = {
     fail: [
         {
-          description: 'fail to start the build',
-          name: 'build2',
+          description: 'fail to extract the DDC logs',
+          dir: 'path1',
         }
       ],
     ok: [
       {
-        description: 'build is start successfully',
-        name: 'build1',
+        description: 'the DDC logs are extracted successfully',
+        dir: 'path2',
       },
     ],
   };  

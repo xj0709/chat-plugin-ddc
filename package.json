@@ -1,8 +1,8 @@
 {
-  "name": "plugin-start-build-dev",
+  "name": "plugin-start-ddc-dev",
   "version": "1.5.1",
   "private": true,
-  "description": "This is the BuildAssistant to help you start a build",
+  "description": "This is an DDC Assistant to help with DDC logs extracting and analysis",
   "homepage": "https://github.com/lobehub/chat-plugin-template",
   "repository": "https://github.com/lobehub/chat-plugin-template.git",
   "workspaces": [

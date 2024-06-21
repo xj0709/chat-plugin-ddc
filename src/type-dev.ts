@@ -1,16 +1,18 @@
 export interface ResultsItem {
     description: string;
-    name: string;
+    dir: string;
   }
  
   export interface ResponseData {
-    baseline: string;
+    dirpath: string;
     result: ResultsItem[];
     today: number;
   }
   
   export interface RequestData {
-    baseline: string;
-    gttscope: 'normal' | 'fivegonly';
+    dirpath: string;
+    endtime: string;
+    starttime: string;
+    time: string;
   }
   

@@ -4,7 +4,7 @@ import { memo, useEffect, useState } from 'react';
 import { Center } from 'react-layout-kit';
 
 import Data from '@/components/Render';
-import { startBuild } from '@/services/ddc-analysis';
+import { extractDDC } from '@/services/ddc-analysis';
 import { ResponseData } from '@/type-dev';
 
 const Render = memo(() => {
@@ -21,7 +21,7 @@ const Render = memo(() => {
 
   useEffect(() => {
     lobeChat.getPluginPayload().then((payload) => {
-      if (payload.name === 'startBuildAssistant') {
+      if (payload.name === 'extractDDC') {
         setPayload(payload.arguments);
         // console.log(payload.arguments);
       }
@@ -29,7 +29,7 @@ const Render = memo(() => {
   }, []);
 
   const fetchData = async () => {
-    const data = await startBuild(payload);
+    const data = await extractDDC(payload);
     setData(data);
     lobeChat.setPluginMessage(data);
   };

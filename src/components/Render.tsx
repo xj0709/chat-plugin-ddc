@@ -12,20 +12,20 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const Render = memo<Partial<ResponseData>>(({ baseline, result, today }) => {
+const Render = memo<Partial<ResponseData>>(({ dirpath, result, today }) => {
   const { styles } = useStyles();
 
   return (
     <Flexbox gap={24}>
       <Flexbox distribution={'space-between'} horizontal>
-        🌟baseline:{baseline}
+        🌟directory_path:{dirpath}
         <span className={styles.date}>{dayjs(today).format('YYYY/MM/DD')}</span>
       </Flexbox>
       <Flexbox gap={8}>
-        StartBuild
+        extractDDC
         <Flexbox gap={12} horizontal style={{ overflow: 'scroll' }}>
           {result?.map((item) => (
-            <Card key={item.name} size={'small'} title={item.name}>
+            <Card key={item.dir} size={'small'} title={item.dir}>
               {item.description}
             </Card>
           ))}

@@ -1,6 +1,6 @@
 import { RequestData } from '@/type-dev';
 
-export const startBuild = async (params: RequestData) => {
+export const extractDDC = async (params: RequestData) => {
   const res = await fetch('/api/ddc-analysis', {
     body: JSON.stringify(params),
     method: 'POST',
