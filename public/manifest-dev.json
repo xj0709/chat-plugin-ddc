@@ -4,7 +4,7 @@
     {
       "url": "https://chat-plugin-lbzi1xqex-xj0709s-projects.vercel.app/api/ddc-analysis",
       "name": "extractDDC",
-      "description": "start a build based on user's input: gttscope and baseline",
+      "description": "extract the DDC logs based on user's input: dirpath and time information",
       "parameters": {
         "properties": {
           "dirpath": {
@@ -24,7 +24,7 @@
             "description": "the DDC log which includes the specified time"
           }
         },
-        "required": ["dirpath"],
+        "required": ["dirpath", "starttime", "endtime", "time"],
         "type": "object"
       }
     }
