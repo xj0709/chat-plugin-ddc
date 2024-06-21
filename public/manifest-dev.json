@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "https://chat-plugin-lbzi1xqex-xj0709s-projects.vercel.app/api/ddc-analysis",
+      "url": "https://chat-plugin-ddc.vercel.app/api/ddc-analysis",
       "name": "extractDDC",
       "description": "extract the DDC logs based on user's input: dirpath and time information",
       "parameters": {
@@ -11,20 +11,20 @@
             "description": "the directory path of the DDC logs, ask user to provide this information",
             "type": "string"
           },
-          "starttime": {
-            "type": "string",
-            "description": "start time, the DDC logs collected after this time"
-          },
           "endtime": {
             "type": "string",
             "description": "end time, the DDC logs collected after this time"
+          },
+          "starttime": {
+            "type": "string",
+            "description": "start time, the DDC logs collected before this time"
           },
           "time": {
             "type": "string",
             "description": "the DDC log which includes the specified time"
           }
         },
-        "required": ["dirpath", "starttime", "endtime", "time"],
+        "required": ["dirpath", "endtime", "starttime", "time"],
         "type": "object"
       }
     }
@@ -40,7 +40,7 @@
     "description": "This is an DDC Assistant to help with DDC logs extracting and analysis"
   },
   "ui": {
-    "url": "https://chat-plugin-lbzi1xqex-xj0709s-projects.vercel.apps",
+    "url": "https://chat-plugin-ddc.vercel.app",
     "height": 200
   },
   "version": "1"
