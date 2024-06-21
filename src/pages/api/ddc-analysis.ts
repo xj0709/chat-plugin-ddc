@@ -15,13 +15,13 @@ export default async (req: Request) => {
 
   const ddcresult = dirpath !== 'no' ? 'ok' : 'fail';
 
-  const buildresult: ResponseData = {
-    dirpath: `${starttime}_${endtime}_or_${time}`,
+  const extractresult: ResponseData = {
+    dirpath: dirpath,
     result: extractResult[ddcresult],
     today: Date.now(),
   };
 
 //   console.log(buildresult);
 
-  return new Response(JSON.stringify(buildresult));
+  return new Response(JSON.stringify(extractresult));
 };
