@@ -13,10 +13,10 @@ export default async (req: Request) => {
 
   const { dirpath, endtime, starttime, time } = (await req.json()) as RequestData;
 
-  const ddcresult = dirpath !== 'no' ? 'ok' : 'fail';
+  const ddcresult = dirpath === 'no' ? 'fail' : 'ok';
 
   const extractresult: ResponseData = {
-    dirpath: dirpath,
+    dirpath: `${dirpath} from ${starttime} to ${endtime} and ${time}`,
     result: extractResult[ddcresult],
     today: Date.now(),
   };
