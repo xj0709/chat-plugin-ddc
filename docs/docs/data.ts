@@ -1,7 +1,7 @@
-import { buildResult } from '@/data-dev';
+import { extractResult } from '@/data-dev';
 
 export const data = {
-  baseline: 'CXS101289_R245C93',
-  result: buildResult['ok'],
+  dirpath: '/home/ezxxxxx/ddc',
+  result: extractResult['ok'],
   today: Date.now(),
 };
