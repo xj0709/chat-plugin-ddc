@@ -1,8 +1,8 @@
 {
-  "name": "plugin-start-build-dev",
+  "name": "plugin-identifier",
   "version": "1.5.1",
   "private": true,
-  "description": "This is the BuildAssistant to help you start a build",
+  "description": "This is the plugin template for LobeChat plugin development",
   "homepage": "https://github.com/lobehub/chat-plugin-template",
   "repository": "https://github.com/lobehub/chat-plugin-template.git",
   "workspaces": [

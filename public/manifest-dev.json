@@ -2,40 +2,38 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "http://localhost:3400/api/clothes",
-      "name": "recommendClothes",
-      "description": "根据用户的心情，给用户推荐他有的衣服",
+      "url": "https://chat-plugin-build.vercel.app/api/startbuild",
+      "name": "startBuild",
+      "description": "start a build based on user's input: gttscope and baseline",
       "parameters": {
         "properties": {
-          "mood": {
-            "description": "用户当前的心情，可选值有：开心（happy）, 难过（sad）,生气 （anger）,害怕（fear）,惊喜（ surprise）,厌恶 （disgust）",
-            "enum": ["happy", "sad", "anger", "fear", "surprise", "disgust"],
+          "baseline": {
+            "description": "the baseline of this build, ask user to provide this information",
             "type": "string"
           },
-          "gender": {
+          "gttscope": {
             "type": "string",
-            "enum": ["man", "woman"],
-            "description": "对话用户的性别，需要询问用户后才知道这个信息"
+            "enum": ["normal", "fivegonly"],
+            "description": "the gttscope, ask user to provide this information"
           }
         },
-        "required": ["mood", "gender"],
+        "required": ["baseline", "gttscope"],
         "type": "object"
       }
     }
   ],
-  "author": "LobeHub",
-  "createdAt": "2023-09-03",
-  "gateway": "http://localhost:3400/api/gateway",
+  "author": "AIAgentPoC",
+  "createdAt": "2024-06-18",
   "homepage": "https://github.com/lobehub/chat-plugin-template",
-  "identifier": "plugin-identifier",
+  "identifier": "plugin-start-build-dev",
   "meta": {
     "avatar": "🚀",
-    "tags": ["template"],
-    "title": "Chat Plugin Template",
-    "description": "This is the plugin template for LobeChat plugin development"
+    "tags": ["test"],
+    "title": "BuildAssistant",
+    "description": "This is the BuildAssistant to help you start a build"
   },
   "ui": {
-    "url": "http://localhost:3400",
+    "url": "https://chat-plugin-build.vercel.app",
     "height": 200
   },
   "version": "1"
