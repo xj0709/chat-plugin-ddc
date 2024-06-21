@@ -11,12 +11,13 @@ export const config = {
 export default async (req: Request) => {
   if (req.method !== 'POST') return createErrorResponse(PluginErrorType.MethodNotAllowed);
 
-  const { dirpath, endtime, starttime, time } = (await req.json()) as RequestData;
+  const data = (await req.json()) as RequestData;
 
-  const ddcresult = dirpath === 'no' ? 'fail' : 'ok';
+  //{ dirpath, endtime='0', starttime='0', time='0' }
+  const ddcresult = data.dirpath === 'no' ? 'fail' : 'ok';
 
   const extractresult: ResponseData = {
-    dirpath: `${dirpath} from ${starttime} to ${endtime} and ${time}`,
+    dirpath: data.dirpath,
     result: extractResult[ddcresult],
     today: Date.now(),
   };
