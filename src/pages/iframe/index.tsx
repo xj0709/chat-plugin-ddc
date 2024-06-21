@@ -4,7 +4,7 @@ import { memo, useEffect, useState } from 'react';
 import { Center } from 'react-layout-kit';
 
 import Data from '@/components/Render';
-import { startBuild } from '@/services/startbuild';
+import { startBuild } from '@/services/ddc-analysis';
 import { ResponseData } from '@/type-dev';
 
 const Render = memo(() => {
