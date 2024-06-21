@@ -1,0 +1,41 @@
+{
+    "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
+    "api": [
+      {
+        "url": "https://chat-plugin-build.vercel.app/api/startbuild",
+        "name": "startBuildAssistant",
+        "description": "start a build based on user's input: gttscope and baseline",
+        "parameters": {
+          "properties": {
+            "baseline": {
+              "description": "the baseline of this build, ask user to provide this information",
+              "type": "string"
+            },
+            "gttscope": {
+              "type": "string",
+              "enum": ["normal", "fivegonly"],
+              "description": "the gttscope, ask user to provide this information"
+            }
+          },
+          "required": ["baseline", "gttscope"],
+          "type": "object"
+        }
+      }
+    ],
+    "author": "AIAgentPoC",
+    "createdAt": "2024-06-18",
+    "homepage": "https://github.com/lobehub/chat-plugin-template",
+    "identifier": "plugin-start-build",
+    "meta": {
+      "avatar": "??",
+      "tags": ["test"],
+      "title": "BuildAssistant",
+      "description": "This is the BuildAssistant to help you start a build"
+    },
+    "ui": {
+      "url": "https://chat-plugin-build.vercel.app",
+      "height": 200
+    },
+    "version": "1"
+  }
+  
